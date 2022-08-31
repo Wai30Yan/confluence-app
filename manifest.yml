@@ -1,0 +1,26 @@
+modules:
+  confluence:globalPage:
+    - key: confluence-global-page-custom-ui
+      resource: main
+      resolver:
+        function: resolver
+      title: confluence-global-page-custom-ui
+      route: hello-world
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+permissions:
+  scopes:
+    - read:confluence-content.summary
+    - write:confluence-content
+  content:
+    styles:
+      - unsafe-inline
+  external:
+    images:
+      - "*.giphy.com"
+app:
+  id: ari:cloud:ecosystem::app/fc132bce-7ac7-4e06-971d-ba1c0a093bba
