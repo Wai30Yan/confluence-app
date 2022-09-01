@@ -24,6 +24,31 @@ resolver.define('getPages', async (req) => {
   return results
 })
 
+resolver.define('getSpaces', async (req) => {
+  const response = await api.asApp().requestConfluence(route`/wiki/rest/api/space`, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+  
+  console.log(`Response: ${response.status} ${response.statusText}`);
+  const { results } = await response.json()
+  return results
+})
+
+resolver.define('getSpace', async (req) => {
+  const response = await api.asApp().requestConfluence(route`/wiki/rest/api/space/SDS`, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+  
+  console.log(`Response: ${response.status} ${response.statusText}`);
+  const space = await response.json()
+
+  return space
+})
+
 
 resolver.define('deletePage', async (req) => {
   const response = await api.asApp().requestConfluence(route`/wiki/rest/api/content/${id}`, {

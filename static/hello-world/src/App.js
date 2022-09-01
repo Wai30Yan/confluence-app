@@ -4,16 +4,24 @@ import Pages from './Pages';
 
 function App() {
   const [pages, setPages] = useState([])
+  const [spaces, setSpaces] = useState([])
+  const [space, setSpace] = useState([])
   const [num, setNum] = useState(null)
-
-  useEffect( async () => {
-
-    const res = await invoke('getPages', { example: 'getting pages' })
-    setPages(res)
-    // res.map(i => {
-    //   setPages((pages) => [...pages, i]
-    // )})
-    setNum(res.length)
+  
+  useEffect(() => {
+    
+    const getPages = async () => {
+      const res = await invoke('getPages', { example: 'getting pages' })
+      // const spaces = await invoke('getSpaces')
+      // const space = await invoke('getSpace')
+      setPages(res)
+      // setSpaces(spaces)
+      // setSpace(space)
+      setNum(res.length)
+      console.log('Inside async', pages)
+    }
+    getPages()
+    console.log('Outside async', pages)
   }, [])
 
   return (

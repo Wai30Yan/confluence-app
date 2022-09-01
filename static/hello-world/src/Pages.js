@@ -1,8 +1,9 @@
 import React from 'react'
-import { invoke } from '@forge/bridge';
 
-const Pages = ({ pages }) => {
+function Pages ({ pages }) {
     console.log(pages)
+    // console.log(spaces)
+    // console.log(space)
     return (
         <div>
             <h1>Page component</h1>
