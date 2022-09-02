@@ -9,7 +9,8 @@
     "@forge/bridge": "^2.4.0",
     "@forge/ui": "^1.4.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.15.1"
   },
   "devDependencies": {
     "react-scripts": "^5.0.1"

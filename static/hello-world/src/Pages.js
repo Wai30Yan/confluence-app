@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Pages ({ pages }) {
-    console.log(pages)
+function Pages ({ pages, spaces }) {
+    console.log(pages, spaces)
     // console.log(spaces)
     // console.log(space)
     return (
@@ -11,8 +11,7 @@ function Pages ({ pages }) {
                 pages ?
                 pages.map(page => {
                     <div>
-                        <h3>Name: {page.title}</h3>
-                        <p>ID: {page.id}</p>
+                        {page.title} - {page.id}
                     </div>
                 }) : 'Loading...'
             }

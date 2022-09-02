@@ -12,8 +12,11 @@ modules:
 resources:
   - key: main
     path: static/hello-world/build
+    tunnel:
+      port: 3000
 permissions:
   scopes:
+    - read:confluence-user
     - read:confluence-space.summary
     - read:confluence-content.summary
     - write:confluence-content
